@@ -1,0 +1,11 @@
+.vscode
+# dependencies
+/node_modules
+
+# production
+/build
+
+db
+
+#Lock File
+package-lock.json
