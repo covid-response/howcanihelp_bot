@@ -4,7 +4,7 @@ const _ = require('underscore');
 var TelegramBotClient = require('telegram-bot-client');
 const bodyParser = require('body-parser');
 
-var client = new TelegramBotClient(config.botToken);
+var client = new TelegramBotClient(NODE_BOT_TOKEN);
 
 
 const app = express();
