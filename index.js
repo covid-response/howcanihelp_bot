@@ -4,7 +4,7 @@ const _ = require('underscore');
 var TelegramBotClient = require('telegram-bot-client');
 const bodyParser = require('body-parser');
 
-var client = new TelegramBotClient(NODE_BOT_TOKEN);
+var client = new TelegramBotClient(process.env.BOT_TOKEN);
 
 
 const app = express();
@@ -23,7 +23,7 @@ app.post('/webhook/callback', function(req, res) {
             if(chatMember.id!=config.botId)
             {
                 let newChatPartipantUsername = chatMember.username;
-                let MESSAGE = "@"+newChatPartipantUsername+", Welcome to Entreprenerus vs Covid-19 group. Please let us know which city you are currently located in and how you can help us? Use the #howcanIhelp with your answer";
+                let MESSAGE = "@"+newChatPartipantUsername+", Welcome to Entreprenerus vs Covid-19 group. Please introduce yourself and fill up the form: https://docs.google.com/forms/d/1M0oH8mEEqWDQfz2YPLUgRX_LhvkCx52oy2OEGxqzTO4/viewform?edit_requested=true";
                 client.sendMessage(req.body.message.chat.id, MESSAGE)
             }
         });
